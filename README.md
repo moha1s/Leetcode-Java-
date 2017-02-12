@@ -9,3 +9,6 @@ b.用List储存nums2中与nums1开始intersection的元素，当遇到map中包�
 242. Valid Anagram
 首先判断两个字符串是否长度一样，不一样则为false，然后新建一个数组count，s.charAt(i)(得到的是对应字母的ASIC码)-'a'，存入数组，重复加1，t.charAt(i)-'a'，重复减1，这样的话如果为true每个数组元素值应为'0'，不为'0'的话则为false。
 
+148. Sort List
+第一步：首先设置快慢指针slow和fast，将原链表head一分为二，第二步：然后再对以上两个链表利用sortList递归划分，划分到单个Node，通过自定义方法merge，进行排序呢，这样两个一分为二的链表都排好序。再对两个一般的链表进行merge，然后return 结果
+
