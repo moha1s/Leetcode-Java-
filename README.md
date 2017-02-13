@@ -15,11 +15,15 @@ b.用List储存nums2中与nums1开始intersection的元素，当遇到map中包�
 147. Insertion Sort List:
 新建一个链表res，然后cur=head，通过next，每次拿一个node出来，这个node值要和pre.next比，比pre.next大的话，pre=pre.next，如果小的话接着往下走，重复上面的步骤，把cur这个node插入到pre.next，如此循环往复，就能得到sorted list结果res.next。
 
-56. Merge Intervals
+56. Merge Intervals:
 分别创建两个新数组start，end，分别把intervals里的start和end点，并用sort排序。然后新建一个List<Interval>，执行for循环，重点在于合并有交集的区间，比较相邻两个区间，前一个区间的end与后一区间的start比较，如果后[start]>前[end]，说明没有交集，直接储存第一个区间，否则，继续比较，知道出现后[start]<前[end]，说明有交集，储存起始前一个区间的start和当前后区间的前一个区间的end。
 
-75. Sort Colors
+75. Sort Colors:
 题记：public void 没有return（真是蠢），分别统计red,white,blue出现次数，然后nums的0，1，2个数就确定了，分别存入相应个数就可以了。
 
-179. Largest Number
+179. Largest Number:
 首先把整数数组中的元素存到字符串数组中，用String.valueOf(nums[i])或者Integer.toString(nums[i]),然后用Arrays.sort(str,(s1,s2)->(s2+s1).compareTo(s1+s2));降序排列，其中"(a,b)->X(表达式)"的意思是：如果X<0，a,b不交换位置，若果X>0，a,b交换位置。最后用String.join(x,String[])对字符串数组进行拼接，x表示以什么拼接，如：x="-",String[]={"a","b"},则拼接后为"a-b"。最后判断字符串第一个res.charAt(0)是否为"0"，是的话直接return "0",因为若果nums={0,0}，res="0"，而不是"00".
+
+274. H-Index:
+H-Index的核心计算方法如下：
+将某作者的所有文章的引用频次按照从大到小的位置排列;从前到后，找到最后一个满足条件的位置，其条件为：此位置是数组的第x个，其值为y，必须满足 y >= x;至此，思路已经形成。即先排序，然后从前向后遍历即可。我的解法是按照频次从小到大排列。之后需要从后向前遍历。只是方向发生了改变，不影响结果。
