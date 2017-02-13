@@ -20,3 +20,6 @@ b.用List储存nums2中与nums1开始intersection的元素，当遇到map中包�
 
 75. Sort Colors
 题记：public void 没有return（真是蠢），分别统计red,white,blue出现次数，然后nums的0，1，2个数就确定了，分别存入相应个数就可以了。
+
+179. Largest Number
+首先把整数数组中的元素存到字符串数组中，用String.valueOf(nums[i])或者Integer.toString(nums[i]),然后用Arrays.sort(str,(s1,s2)->(s2+s1).compareTo(s1+s2));降序排列，其中"(a,b)->X(表达式)"的意思是：如果X<0，a,b不交换位置，若果X>0，a,b交换位置。最后用String.join(x,String[])对字符串数组进行拼接，x表示以什么拼接，如：x="-",String[]={"a","b"},则拼接后为"a-b"。最后判断字符串第一个res.charAt(0)是否为"0"，是的话直接return "0",因为若果nums={0,0}，res="0"，而不是"00".
