@@ -32,8 +32,11 @@ H-Index的核心计算方法如下：
 
 二.(Linkedlist类)：
 
-2. Add Two Numbers
+2. Add Two Numbers: 
 新建一个ListNode储存求和结果，while循环里，首先sum每次都要除以10得到进位数，然后分别加l1和l2相对应的node值，取余数存到ListNode中。遍历完之后，如果最后的sum除以10余1，往res中添加"1"。
 
-21. Merge Two Sorted Lists
+21. Merge Two Sorted Lists:
 新建一个ListNode，然后分别比较l1和l2的node值大小，小的存入res，然后继续调用自己方法本身，比较小的.next。
+
+83. Remove Duplicates from Sorted List:
+遇到一样的值的node，就把他跳过。
