@@ -1,4 +1,5 @@
 # Leetcode-Java-
+一.(Sort类)：
 350. Intersection of Two Arrays II：
 a.首先用HashMap遍历一遍数组nums1，Key值储存数组元素，Value（初始值为1）值储存重复元素出现次数，每出现一次加1；
 b.用List储存nums2中与nums1开始intersection的元素，当遇到map中包含的Key时，才判断对应Value是否大于1，是的话，将对应的nums2[i]，存入result中；这是为了防止当nums1的length小于nums2时，会重复储存nums2中相同数组元素的情况，举例：nums1={1}，nums2={1，1}，如果对应value不减一的话，result会为[1,1]，但实际result应为[1]。
@@ -27,3 +28,7 @@ b.用List储存nums2中与nums1开始intersection的元素，当遇到map中包�
 274. H-Index:
 H-Index的核心计算方法如下：
 将某作者的所有文章的引用频次按照从大到小的位置排列;从前到后，找到最后一个满足条件的位置，其条件为：此位置是数组的第x个，其值为y，必须满足 y >= x;至此，思路已经形成。即先排序，然后从前向后遍历即可。我的解法是按照频次从小到大排列。之后需要从后向前遍历。只是方向发生了改变，不影响结果。
+
+二.(Linkedlist类)：
+2. Add Two Numbers
+新建一个ListNode储存求和结果，while循环里，首先sum每次都要除以10得到进位数，然后分别加l1和l2相对应的node值，取余数存到ListNode中。遍历完之后，如果最后的sum除以10余1，往res中添加"1"。
