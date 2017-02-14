@@ -40,3 +40,6 @@ H-Index的核心计算方法如下：
 
 83. Remove Duplicates from Sorted List:
 遇到一样的值的node，就把他跳过。
+
+138. Copy List with Random Pointer：
+方法1：我们用HashMap先遍历一下原RandomListNode head,把每个节点存进去，这样的话Value值存入与原RandomListNode信息一模一样的点（label，next，random），但是他的两个指针都指向原来的点，第二我们用重新赋予指针。
