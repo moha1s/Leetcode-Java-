@@ -43,3 +43,4 @@ H-Index的核心计算方法如下：
 
 138. Copy List with Random Pointer：
 方法1：我们用HashMap先遍历一下原RandomListNode head,把每个节点存进去，这样的话Value值存入与原RandomListNode信息一模一样的点（label，next，random），但是他的两个指针都指向原来的点，第二我们用重新赋予指针。
+方法2：第一遍扫描：对每个结点进行复制，把复制出来的新结点插在原结点之后；第二遍扫描：根据原结点的random，给新结点的random赋值；第三遍扫描：把新结点从原链表中拆分出来。
