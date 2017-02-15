@@ -50,3 +50,6 @@ H-Index的核心计算方法如下：
 
 234. Palindrome Linked List:
 用快慢指针将原链表一分为二，然后对后半部分链表进行反转，然后再比较两段链表是否相同。
+
+206. Reverse Linked List:
+设置两个新的空节点。
