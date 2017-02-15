@@ -39,4 +39,6 @@ H-Index的核心计算方法如下：
 ## 206. Reverse Linked List
 设置两个新的空节点。
 ## 203. Remove Linked List Elements
-新建一个ListNode res，然后用res.next=head，用cur复制新链表res，while循环里，如果head.val==val，
+新建一个ListNode res，然后用res.next=head，用cur复制新链表res，while循环里，如果head.val==val，cur.next指向head.next，否则cur=cur.next。最后返回res.next。
+## 160. Intersection of Two Linked Lists
+我没看那些先找两个链表长度求差值的方法，这里的解法不需要求长度，我们分别从两个list从前往后走，当一个list走到null的时候，转到另一个list的头，这样我们就消除了差值，这时当另一个list也走到null时，他跳转的另一个list的头时，此时，两个node所在位置到list尾巴的长度一致，但两个list再次往后走，走到a==b时，说明到了intersection起始的位置，直接输出其中任意一个list即可。
