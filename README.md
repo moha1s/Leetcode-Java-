@@ -24,6 +24,10 @@ H-Index的核心计算方法如下：
 ## 二.(Linkedlist类)：
 ## 2. Add Two Numbers
 新建一个ListNode储存求和结果，while循环里，首先sum每次都要除以10得到进位数，然后分别加l1和l2相对应的node值，取余数存到ListNode中。遍历完之后，如果最后的sum除以10余1，往res中添加"1"。
+## 445. Add Two Numbers II
+
+
+
 ## 21. Merge Two Sorted Lists
 新建一个ListNode，然后分别比较l1和l2的node值大小，小的存入res，然后继续调用自己方法本身，比较小的.next。
 ## 83. Remove Duplicates from Sorted List
@@ -42,3 +46,7 @@ H-Index的核心计算方法如下：
 新建一个ListNode res，然后用res.next=head，用cur复制新链表res，while循环里，如果head.val==val，cur.next指向head.next，否则cur=cur.next。最后返回res.next。
 ## 160. Intersection of Two Linked Lists
 我没看那些先找两个链表长度求差值的方法，这里的解法不需要求长度，我们分别从两个list从前往后走，当一个list走到null的时候，转到另一个list的头，这样我们就消除了差值，这时当另一个list也走到null时，他跳转的另一个list的头时，此时，两个node所在位置到list尾巴的长度一致，但两个list再次往后走，走到a==b时，说明到了intersection起始的位置，直接输出其中任意一个list即可。
+## 445. Add Two Numbers II
+利用Stack，将链表倒序push到Stack中，新建一个ListNode res，每次将得到的sum的余数值替换res.val，再新建一个ListNode head，head.next=res，这样每次得到的新res都放到head的后面，再令res=head，就能将结果从后往前保存；若果res第一个node为0，输出res.next，否则直接输出res。
+## 328. Odd Even Linked List
+用两个奇(odd)偶(even)指针分别指向奇偶节点的起始位置，另外需要一个单独的指针res=even来保存偶节点的起点位置，然后把奇节点的指向偶节点的下一个(一定是奇节点)，此奇节点后移一步，再把偶节点指向下一个奇节点的下一个(一定是偶节点)，此偶节点后移一步，以此类推直至末尾，此时把分开的偶节点的链表连在奇节点的链表后即可。
