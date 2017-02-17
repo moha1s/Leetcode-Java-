@@ -44,6 +44,7 @@ H-Index的核心计算方法如下：
 ![Method-2](http://www.2cto.com/uploadfile/2013/1028/20131028041740524.jpg)
 * 构建新节点random指针：new1->random = old1->random->next, new2-random = NULL, new3-random = NULL, new4->random = old4->random->next
 * 恢复原始链表以及构建新链表：例如old1->next = old1->next->next,  new1->next = new1->next->next;该算法时间复杂度O(N)，空间复杂度O(1)
+
 ## 237. Delete Node in a Linked List
 遇到相同值直接跳过。
 ## 234. Palindrome Linked List
