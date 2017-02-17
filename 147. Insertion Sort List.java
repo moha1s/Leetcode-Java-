@@ -1,11 +1,10 @@
-public class Solution {
-    public ListNode insertionSortList(ListNode head) {
-        ListNode res=new ListNode(0),pre=res,cur=head;
+public ListNode insertionSortList(ListNode head) {
+        if(head==null||head.next==null) return head;
+        ListNode res=new ListNode(0);
+        ListNode pre=res,cur=head;
         while(cur!=null){
             pre=res;
-            while(pre.next!=null&&pre.next.val<cur.val){
-                pre=pre.next;
-            }
+            while(pre.next!=null&&pre.next.val<cur.val) pre=pre.next;
             ListNode next=cur.next;
             cur.next=pre.next;
             pre.next=cur;
@@ -13,4 +12,3 @@ public class Solution {
         }
         return res.next;
     }
-}
