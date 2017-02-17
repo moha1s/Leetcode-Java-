@@ -33,9 +33,17 @@ H-Index的核心计算方法如下：
 ## 83. Remove Duplicates from Sorted List
 遇到一样的值的node，就把他跳过。
 ## 138. Copy List with Random Pointer
-方法1：我们用HashMap先遍历一下原RandomListNode head,把每个节点存进去，这样的话Value值存入与原RandomListNode信息一模一样的点（label，next，random），但是他的两个指针都指向原来的点，第二我们用重新赋予指针。
-![Method-1]()
-方法2：第一遍扫描：对每个结点进行复制，把复制出来的新结点插在原结点之后；第二遍扫描：根据原结点的random，给新结点的random赋值；第三遍扫描：把新结点从原链表中拆分出来。
+* 方法1：我们用HashMap先遍历一下原RandomListNode head,把每个节点存进去，这样的话Value值存入与原RandomListNode信息一模一样的点（label，next，random），但是他的两个指针都指向原来的点，第二我们用重新赋予指针。
+
+* 假设原始链表如下，细线表示next指针，粗线表示random指针，没有画出的指针均指向NULL：
+![Method-1](http://www.2cto.com/uploadfile/2013/1028/20131028041708955.jpg)
+* 我们在构建新链表的节点时，保存原始链表的next指针映射关系，并把指针做如下变化(蓝色为原始链表节点，紫红色为新链表节点)：
+![Method-1](http://www.2cto.com/uploadfile/2013/1028/20131028041722302.jpg)
+
+* 方法2：第一遍扫描：对每个结点进行复制，把复制出来的新结点插在原结点之后；第二遍扫描：根据原结点的random，给新结点的random赋值；第三遍扫描：把新结点从原链表中拆分出来。
+![Method-2](http://www.2cto.com/uploadfile/2013/1028/20131028041740524.jpg)
+* 构建新节点random指针：new1->random = old1->random->next, new2-random = NULL, new3-random = NULL, new4->random = old4->random->next
+* 恢复原始链表以及构建新链表：例如old1->next = old1->next->next,  new1->next = new1->next->next;该算法时间复杂度O(N)，空间复杂度O(1)
 ## 237. Delete Node in a Linked List
 遇到相同值直接跳过。
 ## 234. Palindrome Linked List
