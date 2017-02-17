@@ -59,3 +59,5 @@ H-Index的核心计算方法如下：
 利用Stack，将链表倒序push到Stack中，新建一个ListNode res，每次将得到的sum的余数值替换res.val，再新建一个ListNode head，head.next=res，这样每次得到的新res都放到head的后面，再令res=head，就能将结果从后往前保存；若果res第一个node为0，输出res.next，否则直接输出res。
 ## 328. Odd Even Linked List
 用两个奇(odd)偶(even)指针分别指向奇偶节点的起始位置，另外需要一个单独的指针res=even来保存偶节点的起点位置，然后把奇节点的指向偶节点的下一个(一定是奇节点)，此奇节点后移一步，再把偶节点指向下一个奇节点的下一个(一定是偶节点)，此偶节点后移一步，以此类推直至末尾，此时把分开的偶节点的链表连在奇节点的链表后即可。
+## 148. Sort List
+快慢指针，将原list分为两半，然后再递归（调用自身方法），将list化为单个node，用merge方法将每半个链表排序，再总体merge。
