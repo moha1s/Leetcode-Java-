@@ -72,3 +72,5 @@ pre始终指向res list的fakehead，cur指向当前需要被插入的元素，n
 第二步，将第二部分链表逆序。
 
 第三步，将链表重新组合。
+## 109. Convert Sorted List to Binary Search Tree
+利用快慢指针，找list中点，设为tree的root，然后中点的前半部分为tree的左子树，利用递归插入树节点，同理中点的后半部分为右子树，递归插入树节点。
