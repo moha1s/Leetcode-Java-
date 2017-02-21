@@ -74,3 +74,5 @@ pre始终指向res list的fakehead，cur指向当前需要被插入的元素，n
 第三步，将链表重新组合。
 ## 109. Convert Sorted List to Binary Search Tree
 利用快慢指针，找list中点，设为tree的root，然后中点的前半部分为tree的左子树，利用递归插入树节点，同理中点的后半部分为右子树，递归插入树节点。
+## Next Greater Element I
+利用HashMap构造键-值映射，再利用Stack，从nums的第一个元素压栈，然后后面的元素与之比较，比前面一个大，就找到Next Greater元素，形成键-值对，然后遍历findNums，利用getOrDefault，不存在键值对的默认为-1。
