@@ -82,4 +82,6 @@ pre始终指向res list的fakehead，cur指向当前需要被插入的元素，n
 
 ## 三.(Array类)：
 ## 448. Find All Numbers Disappeared in an Array
-首先利用
+首先遍历数组每个元素-1，对应元素的每个值取反，然后再遍历，遇到大于0的值，index+1即为结果。
+## 414. Third Maximum Number
+利用PriorityQueue性质res，最小的始终排在队首，然后再利用Set不能存储相同元素，如果set能储存，就储存到优先队列中，如果res.size()>3,就res.poll()，这样始终保持res的size<=3，队首为第三大的数，遍历完数组，检查res的size大小，如果==2的话，res.poll()，删除队首，最后res.peek()，得到第三大的数或者size为2时最大的数。
