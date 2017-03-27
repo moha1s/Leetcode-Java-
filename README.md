@@ -91,3 +91,6 @@ pre始终指向res list的fakehead，cur指向当前需要被插入的元素，n
 思路是既然0到n之间少了一个数，我们将这个少了一个数的数组合0到n之间完整的数组异或一下，那么相同的数字都变为0了，剩下的就是少了的那个数字了(异或：0^0=0,0^1=1,1^1=0;0^任意一个数=其本身）
 ## 219. Contains Duplicate II
 利用HashMap，Key存数组元素，Value存index，如果出现重复元素，get当前元素的value，用现在的value减去之前的value，即为差值，小于等于k，返回TRUE。
+## 四.(Hash Table类）
+##136. Single Number
+利用位运算，两个相同数异或=0；
