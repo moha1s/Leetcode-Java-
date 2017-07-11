@@ -94,3 +94,6 @@ pre始终指向res list的fakehead，cur指向当前需要被插入的元素，n
 ## 四.(Hash Table类）
 ##136. Single Number
 利用位运算，两个相同数异或=0；
+## 五.(Dynamic Programming类)
+##62.Unique Paths
+由题干可知，robot只能向下和向右移，所以设二维数组dp[m][n],dp[i][0]和dp[0][i]都为1，然后fill up整个dp[][]table，dp[i][j]=dp[i-1][j]+dp[i][j-1],最后result=dp[m-1][n-1].
